@@ -1,1 +1,1 @@
-export { default } from './TodoFilter';
+export { ContactFilter } from './ContactFilter';

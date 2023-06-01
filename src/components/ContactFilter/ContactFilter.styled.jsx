@@ -1,16 +1,17 @@
-.TodoFilter {
+import styled from '@emotion/styled';
+
+export const Filter = styled.div`
   display: inline-block;
-  // line-height: 48px;
-  padding: 16px;
+  padding: ${props => props.theme.spacing(4)};
   margin: 0;
   width: 50%;
-}
+`;
 
-// .TodoFilter__label {
-//     padding: 10px;
-// }
+export const Label = styled.label`
+  padding: 10px;
+`;
 
-.TodoFilter__textarea {
+export const Input = styled.input`
   $line-height: 16px;
   font: inherit;
   line-height: $line-height;
@@ -26,4 +27,4 @@
   &:focus {
     outline: 1px solid teal;
   }
-}
+`;

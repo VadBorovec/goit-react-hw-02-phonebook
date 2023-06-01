@@ -1,1 +1,1 @@
-export { default } from './TodoStats';
+export { ContactStats } from './ContactStats';

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-const Button = styled.button`
+export const Button = styled.button`
   /* display: flex; */
   /* width: 100%; */
   /* justify-content: center; */
@@ -9,8 +9,8 @@ const Button = styled.button`
 
   padding: 0.6rem 1rem;
   margin: 0 0.5rem;
-  background-color: teal;
-  color: #fff;
+  background-color: ${props => props.theme.colors.btn};
+  color: ${props => props.theme.colors.white};
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 600;
@@ -22,11 +22,11 @@ const Button = styled.button`
   transition: box-shadow 250ms linear;
 
   :hover {
-    background-color: darkcyan;
+    background-color: ${props => props.theme.colors.btnHover};
   }
 
   :active {
-    background-color: lightseagreen;
+    background-color: ${props => props.theme.colors.btnActive};
     box-shadow: 2px 5px 2px 0 rgb(0 0 0 / 0.5);
   }
 
@@ -35,5 +35,3 @@ const Button = styled.button`
     cursor: not-allowed;
   }
 `;
-
-export default Button;

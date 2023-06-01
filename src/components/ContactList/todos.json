@@ -1,6 +1,0 @@
-[
-  { "id": "id-0", "text": "Learn Javascript", "completed": true },
-  { "id": "id-1", "text": "Learn React Basics", "completed": false },
-  { "id": "id-2", "text": "Understand React Router", "completed": false },
-  { "id": "id-3", "text": "Learn Redux", "completed": false }
-]

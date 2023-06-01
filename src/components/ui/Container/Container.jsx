@@ -1,7 +1,5 @@
 import { ContainerDiv } from './Container.styled';
 
-const Container = ({ children }) => {
+export const Container = ({ children }) => {
   return <ContainerDiv>{children}</ContainerDiv>;
 };
-
-export default Container;

@@ -1,6 +1,10 @@
 export const theme = Object.freeze({
   colors: {
     accent: '#4dd0e1',
+    btn: 'teal',
+    btnHover: 'darkcyan',
+    btnActive: 'lightseagreen',
+    deepteal: '#003336',
     white: '#ffffff',
     gray: '#9e9e9e',
     light: '#f2f2f2',

@@ -1,1 +1,1 @@
-export { default } from './TodoEditor';
+export { ContactForm } from './ContactForm';
