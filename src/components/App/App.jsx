@@ -3,10 +3,12 @@ import shortid from 'shortid';
 
 import { Container, Section } from 'components/ui';
 
-import { ContactFilter } from 'components/ContactFilter';
-import { ContactForm } from 'components/ContactForm';
-import { ContactList } from 'components/ContactList';
-import { ContactStats } from 'components/ContactStats';
+import {
+  ContactFilter,
+  ContactForm,
+  ContactList,
+  ContactStats,
+} from 'components';
 
 export class App extends Component {
   state = {
