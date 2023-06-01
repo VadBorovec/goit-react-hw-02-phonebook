@@ -1,0 +1,29 @@
+.TodoFilter {
+  display: inline-block;
+  // line-height: 48px;
+  padding: 16px;
+  margin: 0;
+  width: 50%;
+}
+
+// .TodoFilter__label {
+//     padding: 10px;
+// }
+
+.TodoFilter__textarea {
+  $line-height: 16px;
+  font: inherit;
+  line-height: $line-height;
+  letter-spacing: 0.01em;
+
+  padding: 5px;
+  margin-left: 5px;
+  resize: none;
+  //   width: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  &:focus {
+    outline: 1px solid teal;
+  }
+}
