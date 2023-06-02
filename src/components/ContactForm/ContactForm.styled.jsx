@@ -13,9 +13,9 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  $line-height: ${props => props.theme.spacing(4)};
+  // $line-height: ${props => props.theme.spacing(4)};
   font: inherit;
-  line-height: $line-height;
+  line-height: ${props => props.theme.spacing(4)};
   letter-spacing: 0.01em;
 
   /* height: $line-height * 3 + 24px; */
