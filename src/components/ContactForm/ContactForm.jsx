@@ -30,8 +30,24 @@ export class ContactForm extends Component {
     number: '',
   };
 
-  handleSubmit = (values, { resetForm }) => {
-    const { onSubmit } = this.props;
+  handleSubmit = (values, { resetForm, setErrors }) => {
+    const { onSubmit, contacts } = this.props;
+    const { name, number } = values;
+
+    const existingContact = contacts.find(
+      contact => contact.name === name || contact.number === number
+    );
+
+    if (existingContact) {
+      if (existingContact.name === name) {
+        setErrors({ name: 'Contact with this name already exists!' });
+      }
+      if (existingContact.number === number) {
+        setErrors({ number: 'Contact with this number already exists!' });
+      }
+      return;
+    }
+
     onSubmit(values.name, values.number);
     resetForm();
   };

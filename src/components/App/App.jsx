@@ -55,7 +55,10 @@ export class App extends Component {
     return (
       <Container>
         <Section title="Phonebook">
-          <ContactForm onSubmit={this.addContact} />
+          <ContactForm
+            onSubmit={this.addContact}
+            contacts={this.state.contacts}
+          />
           <ContactFilter value={filter} onChange={this.changeFilter} />
           <ContactStats totalContactCount={totalContactCount} />
 
