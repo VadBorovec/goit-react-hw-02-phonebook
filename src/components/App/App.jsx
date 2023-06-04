@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import shortid from 'shortid';
+import Notiflix from 'notiflix';
 
 import { Container, Section } from 'components/ui';
 
@@ -17,15 +18,36 @@ export class App extends Component {
   };
 
   addContact = (name, number) => {
+    const { contacts } = this.state;
     const contact = {
       id: shortid.generate(),
       name,
       number,
     };
 
-    this.setState(prevState => ({
-      contacts: [contact, ...prevState.contacts],
-    }));
+    const existingName = contacts.find(
+      contact => contact.name.toLowerCase() === name.toLowerCase()
+    );
+    const existingNumber = contacts.find(contact => contact.number === number);
+
+    if (existingName) {
+      Notiflix.Notify.failure(
+        `Contact with this name - ${contact.name} already exists!`
+      );
+      return;
+    } else if (existingNumber) {
+      Notiflix.Notify.failure(
+        `Contact with this number - ${contact.number} already exists!`
+      );
+      return;
+    } else {
+      this.setState(prevState => ({
+        contacts: [contact, ...prevState.contacts],
+      }));
+      Notiflix.Notify.success(
+        `${contact.name} has been added to  your phonebook`
+      );
+    }
   };
 
   deleteContact = contactId => {
@@ -55,10 +77,7 @@ export class App extends Component {
     return (
       <Container>
         <Section title="Phonebook">
-          <ContactForm
-            onSubmit={this.addContact}
-            contacts={this.state.contacts}
-          />
+          <ContactForm onSubmit={this.addContact} />
           <ContactFilter value={filter} onChange={this.changeFilter} />
           <ContactStats totalContactCount={totalContactCount} />
 
