@@ -28,7 +28,10 @@ export class App extends Component {
     const existingName = contacts.find(
       contact => contact.name.toLowerCase() === name.toLowerCase()
     );
-    const existingNumber = contacts.find(contact => contact.number === number);
+    const existingNumber = contacts.find(
+      contact =>
+        contact.number.replace(/[^\d]/g, '') === number.replace(/[^\d]/g, '')
+    );
 
     if (existingName) {
       Notiflix.Notify.failure(
